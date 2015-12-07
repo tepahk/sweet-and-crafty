@@ -1,0 +1,22 @@
+{
+  "name": "sweet-and-crafty",
+  "version": "1.0.0",
+  "description": "Sweet + Crafty Wordpress theme customizations",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tepahk/sweet-and-crafty.git"
+  },
+  "author": "Tessa Pahkamaa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tepahk/sweet-and-crafty/issues"
+  },
+  "homepage": "http://sweetandcrafty.com",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-watch": "^4.3.5"
+  }
+}
