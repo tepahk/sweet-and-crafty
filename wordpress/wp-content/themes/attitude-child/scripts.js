@@ -12,9 +12,11 @@
 		}else{
 			$primaryNav.unbind();
 		}
-	}
+	}();
 
-	navToggle();
+	var addPinIt = function(){
+		$('body').append('<script async defer src="//assets.pinterest.com/js/pinit.js"></script>');
+	}();
 
 	$(window).resize(function(){
 		navToggle();

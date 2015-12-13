@@ -36,7 +36,7 @@ html {
 
 body {
 	height: 100%;
-	background: url(/new/wp-content/themes/attitude-child/images/bg.png) top center repeat-x #fff;
+	background: url(/new/wp-content/themes/attitude-child/images/bg.png) top center repeat-x #fff !important;
 	font: normal 13px/22px Arial, serif;
 	color: #666;
 }
@@ -419,6 +419,7 @@ blockquote {
 ------------------------------ */
 #primary{
 	width: 70%;
+	float:left;
 }
 
 /* Sidebar widgets
@@ -1264,9 +1265,7 @@ input {
 		float:left;
 	}
 	#secondary {
-		float:right;
-		margin-left: 5%;
-		width: 35%;
+		width: 30%;
 	}
 }
 
