@@ -23,7 +23,7 @@ html {
 
 body {
   height: 100%;
-  background: url(images/bg.png) top center repeat-x #fff;
+  background: url(/new/wp-content/themes/attitude-child/images/bg.png) top center repeat-x #fff;
   font: normal 13px/22px Arial, serif;
   color: #666; }
 
@@ -40,6 +40,7 @@ h2 {
 h1 + h3 {
   text-align: center;
   font-size: 18px;
+  line-height: 1.4em;
   text-transform: none;
   font-style: italic;
   color: #898989;
@@ -52,8 +53,13 @@ h4 {
 
 p {
   margin-bottom: 25px; }
+  p.image {
+    margin: 0;
+    position: relative; }
+    p.image:hover .pinterest-button {
+      opacity: 1; }
 
-a:focus, a:active, a:visited {
+a, a:link, a:focus, a:active, a:visited {
   color: #f2a99a; }
 
 a:hover {
@@ -66,11 +72,22 @@ img.nomargin {
   margin-top: 0 !important;
   margin-bottom: 10px !important; }
 
+.pinterest-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  opacity: 0;
+  transition: all .5s; }
+
+.csColumn ul,
+.csColumn li {
+  text-align: left; }
+
 blockquote {
   border-left: none;
   margin-bottom: 0;
   padding: 30px 20px;
-  background: url(images/divider.png) top center repeat-x, url(images/divider-2.png) bottom center repeat-x transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/divider.png) top center repeat-x, url(/new/wp-content/themes/attitude-child/images/divider-2.png) bottom center repeat-x transparent;
   text-align: center;
   font-size: 35px;
   line-height: 40px;
@@ -79,11 +96,11 @@ blockquote {
 .divider {
   width: 100%;
   height: 8px;
-  background: url(images/divider.png) center center repeat-x transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/divider.png) center center repeat-x transparent;
   margin: 0 0 15px;
   clear: both; }
   .divider:nth-of-type(2n) {
-    background: url(images/divider-2.png) center center repeat-x transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/divider-2.png) center center repeat-x transparent; }
   .divider + p {
     margin-bottom: 10px; }
   .divider + h1 {
@@ -95,8 +112,10 @@ blockquote {
   display: none; }
 
 .menu-open {
-  -webkit-transform: translateX(40%);
-  transform: translateX(40%); }
+  overflow: hidden; }
+  .menu-open .wrapper {
+    -webkit-transform: translateX(40%);
+    transform: translateX(40%); }
 
 /* Wrapper
 ------------------------------ */
@@ -119,6 +138,9 @@ blockquote {
   #main:after {
     content: "";
     display: block; }
+  @media only screen and (min-width: 0) and (max-width: 767px) {
+    #main {
+      padding-top: 0; } }
 
 /* Columns
 ------------------------------ */
@@ -161,7 +183,7 @@ blockquote {
 ------------------------------ */
 #access {
   border: none;
-  background: url(images/bg-nav.png) center top repeat-x transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/bg-nav.png) center top repeat-x transparent;
   min-height: 50px; }
   #access ul {
     display: block;
@@ -186,7 +208,7 @@ blockquote {
       color: #000 !important; }
     #access ul li.current-menu-item::after, #access ul li.current-page-ancestor::after {
       content: '';
-      background: url(images/bg-selected.png) center center/contain no-repeat transparent;
+      background: url(/new/wp-content/themes/attitude-child/images/bg-selected.png) center center/contain no-repeat transparent;
       height: 250%;
       position: absolute;
       top: 40%;
@@ -224,6 +246,9 @@ blockquote {
           font-size: 13px;
           padding-left: 12px;
           padding-right: 12px; } }
+      @media only screen and (min-width: 0) and (max-width: 767px) {
+        #access ul li a {
+          height: auto; } }
   @media only screen and (min-width: 0) and (max-width: 767px) {
     #access {
       height: auto;
@@ -234,7 +259,7 @@ blockquote {
       left: 5%;
       width: 25px; }
       #access .container {
-        background: url(images/menu@2x.png) center 10px/auto 18px no-repeat transparent;
+        background: url(/new/wp-content/themes/attitude-child/images/menu@2x.png) center 10px/auto 18px no-repeat transparent;
         height: auto;
         padding: 40px 0 0;
         cursor: pointer;
@@ -243,7 +268,7 @@ blockquote {
         transition: max-height .5s, background-color .5s; }
       #access.active .container {
         max-height: 500px;
-        background-image: url(images/menu-close@2x.png); }
+        background-image: url(/new/wp-content/themes/attitude-child/images/menu-close@2x.png); }
       #access select {
         display: none; }
       #access ul {
@@ -268,7 +293,7 @@ blockquote {
 ------------------------------ */
 .masked,
 .home .column a {
-  background: -webkit-linear-gradient(transparent, transparent), url(images/text-mask.png) 0 0 repeat transparent;
+  background: -webkit-linear-gradient(transparent, transparent), url(/new/wp-content/themes/attitude-child/images/text-mask.png) 0 0 repeat transparent;
   background-image: -o-linear-gradient(transparent, transparent);
   color: inherit;
   -webkit-text-fill-color: transparent;
@@ -277,9 +302,16 @@ blockquote {
   font-size: 38px;
   font-style: italic; }
 
+/* Main blog content
+------------------------------ */
+#primary {
+  width: 70%; }
+
 /* Sidebar widgets
 ------------------------------ */
 #secondary {
+  float: right;
+  width: 25%;
   text-align: center; }
   #secondary p {
     font-size: 12px;
@@ -300,9 +332,9 @@ blockquote {
     height: 20px;
     overflow: hidden;
     text-indent: -9999px;
-    background: url(images/title-hello.png) center top no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/title-hello.png) center top no-repeat transparent; }
   #secondary .sidebar-share-icons li a {
-    background: url(images/share-icons-small.png) top left no-repeat transparent;
+    background: url(/new/wp-content/themes/attitude-child/images/share-icons-small.png) top left no-repeat transparent;
     width: 37px;
     height: 37px; }
   #secondary .sidebar-share-icons li.icon-facebook a {
@@ -330,9 +362,9 @@ blockquote {
     #secondary .sidebar-share-icons li.icon-etsy a:hover {
       background-position: -202px -45px; }
   #secondary #text-3 .widget-title {
-    background: url(images/title-get-in-touch.png) center top no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/title-get-in-touch.png) center top no-repeat transparent; }
   #secondary #text-6 .widget-title {
-    background: url(images/title-featured-work.png) center top no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/title-featured-work.png) center top no-repeat transparent; }
 
 /* Footer
 ------------------------------ */
@@ -353,7 +385,7 @@ blockquote {
       height: 47px;
       overflow: hidden;
       text-indent: -9999px;
-      background: url(images/share-icons.png) top left no-repeat transparent;
+      background: url(/new/wp-content/themes/attitude-child/images/share-icons.png) top left no-repeat transparent;
       transition: none;
       display: block; }
       .menu-footer-menu-container li a:hover,
@@ -394,7 +426,7 @@ blockquote {
       display: none; }
 
 .menu-footer-menu-container {
-  background: url(images/double-line.png) center center repeat-x transparent; }
+  background: url(/new/wp-content/themes/attitude-child/images/double-line.png) center center repeat-x transparent; }
 
 #site-generator {
   padding: 0; }
@@ -408,7 +440,7 @@ blockquote {
   padding: 0 35px 0 10px;
   border-radius: 0;
   font: inherit;
-  background: url(images/icon-search.png) right center no-repeat #f9f9f9; }
+  background: url(/new/wp-content/themes/attitude-child/images/icon-search.png) right center no-repeat #f9f9f9; }
 
 #site-generator {
   padding: 15px 0 0;
@@ -418,7 +450,7 @@ blockquote {
   font: normal 12px Arial, Helvetica, sans-serif; }
 
 #colophon {
-  background: url(images/bg-footer.png) center bottom repeat-x transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/bg-footer.png) center bottom repeat-x transparent;
   margin-bottom: 0;
   padding: 0 0 30px; }
 
@@ -437,7 +469,7 @@ PAGES
   .home .sub-nav p {
     margin: 0; }
   .home .sub-nav a {
-    background: url(images/bg-button.png) center center repeat transparent;
+    background: url(/new/wp-content/themes/attitude-child/images/bg-button.png) center center repeat transparent;
     font: italic normal 32px/40px "Vollkorn", Georgia, serif;
     text-transform: uppercase;
     padding: 40px 0;
@@ -453,25 +485,25 @@ PAGES
       margin: 0 auto; }
   .home .sub-nav .button-services > span {
     width: 162px;
-    background: url(images/sprite-button.png) 0 0 no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) 0 0 no-repeat transparent; }
   .home .sub-nav .button-services:hover > span {
     width: 162px;
-    background: url(images/sprite-button.png) 0 -60px no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) 0 -60px no-repeat transparent; }
   .home .sub-nav .button-portfolio > span {
     width: 195px;
-    background: url(images/sprite-button.png) -215px 0 no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -215px 0 no-repeat transparent; }
   .home .sub-nav .button-portfolio:hover > span {
-    background: url(images/sprite-button.png) -215px -60px no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -215px -60px no-repeat transparent; }
   .home .sub-nav .button-shop > span {
     width: 94px;
-    background: url(images/sprite-button.png) -460px 0 no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -460px 0 no-repeat transparent; }
   .home .sub-nav .button-shop:hover > span {
-    background: url(images/sprite-button.png) -460px -60px no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -460px -60px no-repeat transparent; }
   .home .sub-nav .button-blog > span {
     width: 94px;
-    background: url(images/sprite-button.png) -622px 0 no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -622px 0 no-repeat transparent; }
   .home .sub-nav .button-blog:hover > span {
-    background: url(images/sprite-button.png) -622px -60px no-repeat transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -622px -60px no-repeat transparent; }
 
 .home .home-slider {
   margin-bottom: 40px; }
@@ -488,11 +520,11 @@ PAGES
     width: 35px;
     height: 70px;
     margin: -35px 0 0;
-    background: url(images/arrow-right.png) center center no-repeat #f2a99a;
+    background: url(/new/wp-content/themes/attitude-child/images/arrow-right.png) center center no-repeat #f2a99a;
     color: #fff !important;
     font: bold 60px Gotham, Arial, sans-serif; }
     .home .home-slider .flex-direction-nav a.flex-prev {
-      background-image: url(images/arrow-left.png); }
+      background-image: url(/new/wp-content/themes/attitude-child/images/arrow-left.png); }
   .home .home-slider .flexslider .flex-next, .home .home-slider .flexslider:hover .flex-next {
     opacity: 1;
     right: .85%; }
@@ -506,7 +538,7 @@ PAGES
   text-transform: none;
   font: normal 25px/25px "Vollkorn", Georgia, serif;
   color: #f2a99a;
-  background: url(images/divider-2.png) center bottom repeat-x transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/divider-2.png) center bottom repeat-x transparent;
   margin-bottom: 15px; }
   .entry-title a {
     color: #f2a99a; }
@@ -516,7 +548,7 @@ PAGES
 .single #content .post,
 #content .post {
   border-top: none;
-  background: url(images/bg-blog-meta.png) center bottom/100% auto no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/bg-blog-meta.png) center bottom/100% auto no-repeat transparent;
   margin: 0 0 75px;
   padding: 0 0 50px; }
   .single #content .post .entry-header .entry-date,
@@ -527,7 +559,7 @@ PAGES
   .single #content .post .entry-content,
   #content .post .entry-content {
     padding: 0;
-    background: url(images/bg-blog-post.png) center bottom repeat-x transparent; }
+    background: url(/new/wp-content/themes/attitude-child/images/bg-blog-post.png) center bottom repeat-x transparent; }
     .single #content .post .entry-content > img,
     .single #content .post .entry-content a > img,
     #content .post .entry-content > img,
@@ -576,7 +608,7 @@ PAGES
         top: -7px; }
     .single #content .post .entry-meta .comments,
     #content .post .entry-meta .comments {
-      background: url(images/icon-comments.png) left center no-repeat transparent;
+      background: url(/new/wp-content/themes/attitude-child/images/icon-comments.png) left center no-repeat transparent;
       float: right;
       padding: 5px 0 5px 30px; }
   .single #content .post .entry-meta-bar,
@@ -586,26 +618,26 @@ PAGES
     clear: both; }
 
 #content ul.default-wp-page li.previous a {
-  background: url(images/older-posts.png) left top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/older-posts.png) left top no-repeat transparent;
   text-indent: -9999px;
   overflow: hidden;
   width: 190px;
   height: 20px; }
   #content ul.default-wp-page li.previous a:hover {
-    background: url(images/older-posts.png) left top no-repeat transparent;
+    background: url(/new/wp-content/themes/attitude-child/images/older-posts.png) left top no-repeat transparent;
     text-indent: -9999px;
     overflow: hidden;
     width: 190px;
     height: 20px; }
 
 #content ul.default-wp-page li.next a {
-  background: url(images/newer-posts.png) left top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/newer-posts.png) left top no-repeat transparent;
   text-indent: -9999px;
   overflow: hidden;
   width: 201px;
   height: 20px; }
   #content ul.default-wp-page li.next a:hover {
-    background: url(images/newer-posts.png) left top no-repeat transparent;
+    background: url(/new/wp-content/themes/attitude-child/images/newer-posts.png) left top no-repeat transparent;
     text-indent: -9999px;
     overflow: hidden;
     width: 201px;
@@ -615,7 +647,7 @@ PAGES
 ------------------------------ */
 .page-id-4797 #content .entry-content h1 {
   width: 195px;
-  background: url(images/sprite-button.png) -215px top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -215px top no-repeat transparent;
   text-indent: -9999px;
   height: 28px;
   padding: 0;
@@ -658,7 +690,7 @@ PAGES
 /* About Narine
 ------------------------------ */
 .page-id-4793 h2.masked {
-  background: url(images/title-some-of-my-favorites.png) center top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/title-some-of-my-favorites.png) center top no-repeat transparent;
   text-indent: -9999px;
   overflow: hidden;
   height: 25px; }
@@ -715,7 +747,7 @@ PAGES
 /* Contact
 ------------------------------ */
 .page-id-4805 .entry-content h1 {
-  background: url(images/title-lets-get-in-touch.png) center top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/title-lets-get-in-touch.png) center top no-repeat transparent;
   text-indent: -9999px;
   overflow: hidden;
   height: 25px; }
@@ -731,7 +763,7 @@ span.wpcf7-not-valid-tip {
 ------------------------------ */
 .page-id-6792 #content .entry-content h1 {
   width: 256px;
-  background: url(images/sprite-button.png) -774px top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -774px top no-repeat transparent;
   text-indent: -9999px;
   height: 28px;
   padding: 0;
@@ -742,7 +774,7 @@ span.wpcf7-not-valid-tip {
 ------------------------------ */
 .page-id-6584 #content .entry-content h1 {
   width: 105px;
-  background: url(images/sprite-button.png) -1090px top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -1090px top no-repeat transparent;
   text-indent: -9999px;
   height: 28px;
   padding: 0;
@@ -753,7 +785,7 @@ span.wpcf7-not-valid-tip {
 ------------------------------ */
 .page-id-6794 #content .entry-content h1 {
   width: 155px;
-  background: url(images/sprite-button.png) -1255px top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) -1255px top no-repeat transparent;
   text-indent: -9999px;
   height: 28px;
   padding: 0;
@@ -785,7 +817,7 @@ textarea {
 /* Services
 ------------------------------ */
 .page-id-4795 .entry-content h1 {
-  background: url(images/sprite-button.png) left top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/sprite-button.png) left top no-repeat transparent;
   text-indent: -9999px;
   overflow: hidden;
   height: 25px;
@@ -862,7 +894,7 @@ textarea {
   color: #f2a99a; }
 
 input[type="reset"], input[type="button"], input[type="submit"] {
-  background: url(images/submit.png) left top no-repeat transparent;
+  background: url(/new/wp-content/themes/attitude-child/images/submit.png) left top no-repeat transparent;
   overflow: hidden;
   border: none;
   border-radius: 0;
@@ -871,7 +903,7 @@ input[type="reset"], input[type="button"], input[type="submit"] {
   text-indent: -9999px; }
 
 input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover {
-  background: url(images/submit-hover.png) left top no-repeat transparent; }
+  background: url(/new/wp-content/themes/attitude-child/images/submit-hover.png) left top no-repeat transparent; }
 
 .comment-awaiting-moderation {
   color: #aaa;
