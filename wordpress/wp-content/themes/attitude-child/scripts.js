@@ -18,9 +18,4 @@
 		$('body').append('<script async defer src="//assets.pinterest.com/js/pinit.js"></script>');
 	}();
 
-	$(window).resize(function(){
-		navToggle();
-	})
-
-
 })(jQuery);
